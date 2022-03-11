@@ -1,20 +1,14 @@
+import java.util.Scanner;
+
 public class Solution {
+    static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
-        int[] nums = new int[]{0, 1, 2,  3, 4,5,7,8,9,9,9};
-        int k = removeDuplicates(nums);
-        for(int i=0;i< k;i++){
-            System.out.println(nums[i]);
-        }
+
+        int[] array=new int[]{1,2,3,4,5,6,7};
+        rotate(array,3);
     }
 
-    public static int removeDuplicates(int[] nums) {
-        int k=1;
-        for(int i=0;i< nums.length-1;i++){
-            if(nums[i]!=nums[i+1]){
-                nums[k]=nums[i+1];
-                k++;
-            }
-        }
-        return k;
-    }
+
+
+
 }
