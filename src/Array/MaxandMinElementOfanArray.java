@@ -1,9 +1,6 @@
-import java.util.Scanner;
+package Array;
 
-
-public class Solution {
-
-
+public class MaxandMinElementOfanArray {
     public static void main(String[] args) {
 
         int arr[] = new int[]{2, 3, 4, 5, 6};
@@ -11,7 +8,6 @@ public class Solution {
         minMaxPair pair = maxandminelement(arr);
         System.out.println("The max element is " + pair.max);
         System.out.println("The min element is " + pair.min);
-//        printArray(maxandminelement(arr, 0, arr.length - 1));
     }
 
     private static minMaxPair maxandminelement(int[] arr) {
@@ -43,12 +39,4 @@ public class Solution {
         int min;
         int max;
     }
-
-    public static void printArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
-    }
-
-
 }
