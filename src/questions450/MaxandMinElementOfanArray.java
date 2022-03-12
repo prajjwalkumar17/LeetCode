@@ -1,4 +1,4 @@
-package Array;
+package questions450;
 
 public class MaxandMinElementOfanArray {
     public static void main(String[] args) {
@@ -8,6 +8,7 @@ public class MaxandMinElementOfanArray {
         minMaxPair pair = maxandminelement(arr);
         System.out.println("The max element is " + pair.max);
         System.out.println("The min element is " + pair.min);
+        //time complexity=O(n)
     }
 
     private static minMaxPair maxandminelement(int[] arr) {

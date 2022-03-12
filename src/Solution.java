@@ -1,48 +1,34 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
-
+import java.util.StringJoiner;
 
 public class Solution {
 
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        int[] array1 = new int[]{1};
+        int size1 = 1;
+        int[] array2 = new int[]{};
+        int size2 = 0;
+        int[] result = combinearray(array1, size1, array2, size2);
+        printArray(result);
 
-        int arr[] = new int[]{2, 3, 4, 5, 6};
-
-        minMaxPair pair = maxandminelement(arr);
-        System.out.println("The max element is " + pair.max);
-        System.out.println("The min element is " + pair.min);
-//        printArray(maxandminelement(arr, 0, arr.length - 1));
     }
 
-    private static minMaxPair maxandminelement(int[] arr) {
-        minMaxPair pair = new minMaxPair();
-        if (arr.length == 1) {
-            pair.min = arr[0];
-            pair.max = arr[0];
-            return pair;
-        }
-        if (arr[0] > arr[1]) {
-            pair.max = arr[0];
-            pair.min = arr[1];
+    private static int[] combinearray(int[] nums1, int m, int[] nums2, int n) {
+        if (n != 0) {
+            nums1[m] = nums2[n - 1];
+            m++;
+            n--;
         } else {
-            pair.max = arr[1];
-            pair.min = arr[0];
+            Arrays.sort(nums1);
+            return nums1;
         }
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > pair.max) {
-                pair.max = arr[i];
-            } else if (arr[i] < pair.min) {
-                pair.min = arr[i];
-            }
-        }
-        return pair;
+        return combinearray(nums1, m, nums2, n);
     }
 
-    static class minMaxPair {
-        int min;
-        int max;
-    }
 
     public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
@@ -52,3 +38,6 @@ public class Solution {
 
 
 }
+
+
+
