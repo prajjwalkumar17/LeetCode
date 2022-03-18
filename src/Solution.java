@@ -24,6 +24,7 @@ public class Solution {
             System.out.println(array[i]);
         }
     }
+
 /*  int curr = 0;
         for (int num : nums) {
             curr = Math.max(curr + num, num);
