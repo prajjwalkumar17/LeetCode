@@ -4,22 +4,18 @@ public class Solution {
 
 
     public static void main(String[] args) {
-        char[] array1 = new char[]{'H', 'E', 'L', 'L', 'O'};
-        reverseString(array1);
+//        char[] array1 = new char[]{'H', 'E', 'L', 'L', 'O'};
+        String quest = "leetcode";
+        System.out.println(reverseString(quest));
     }
 
-    private static void reverseString(char[] s) {
-        for (int i = 0; i < s.length / 2; i++) {
-            char temp = s[i];
-            s[i] = s[s.length - i - 1];
-            s[s.length - i - 1] = temp;
+    private static int reverseString(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.indexOf(String.valueOf(s.charAt(i))) == s.lastIndexOf(String.valueOf(s.charAt(i)))) {
+                return i;
+            }
         }
-
-        for (char c : s) {
-            System.out.println(c);
-
-        }
-
+        return -1;
     }
 
 

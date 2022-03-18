@@ -1,4 +1,4 @@
-package Strings;
+package questions450;
 
 public class ReversingCharArray {
     private static void reverseString(char[] s) {
