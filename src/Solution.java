@@ -4,16 +4,26 @@ public class Solution {
 
 
     public static void main(String[] args) {
-        int[] array1 = new int[]{9, 6, 4, 5, 10, 87, 18, 67, 9};
-
-        System.out.println(secondLargest(array1));
+        char[] array1 = new char[]{'H', 'E', 'L', 'L', 'O'};
+        reverseString(array1);
     }
 
-    private static int secondLargest(int[] array1) {
+    private static void reverseString(char[] s) {
+        for (int i = 0; i < s.length / 2; i++) {
+            char temp = s[i];
+            s[i] = s[s.length - i - 1];
+            s[s.length - i - 1] = temp;
+        }
+
+        for (char c : s) {
+            System.out.println(c);
+
+        }
+
     }
 
 
-    public static void printArray(int[] array) {
+    public static void printArray(char[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
