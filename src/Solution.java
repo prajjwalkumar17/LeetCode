@@ -25,12 +25,6 @@ public class Solution {
         }
     }
 
-/*  int curr = 0;
-        for (int num : nums) {
-            curr = Math.max(curr + num, num);
-            result = Math.max(curr, result);
-        }
-        return result;*/
 
 
 }
