@@ -1,25 +1,6 @@
 package Array;
-/*Input: nums = [1,2,3,4,5,6,7], k = 3
-        Output: [5,6,7,1,2,3,4]
-        Explanation:
-        rotate 1 steps to the right: [7,1,2,3,4,5,6]
-        rotate 2 steps to the right: [6,7,1,2,3,4,5]
-        rotate 3 steps to the right: [5,6,7,1,2,3,4]*/
-public class Rotating_an_array {
- /*   public static void rotate(int[] nums, int k) {
-        for(int p=nums.length-1;p>= nums.length-k;p--){
-            int temp=nums[p];
-            for(int u=p-1;u>=0;u--){
-                nums[u+1]=nums[u];
-            }
-            nums[0]=temp;
-        }
 
-        for (int a=0;a< nums.length;a++){
-            System.out.println(nums[a]);
-        }
-    }*/
-
+public class Rotating_an_array_Left {
 
     //TODO 1st approach Theta(nd)
     private static int[] rotateArrayDPos(int[] arr, int d) {
@@ -49,6 +30,31 @@ public class Rotating_an_array {
 
         for (int i = 0; i < d; i++)
             arr[arr.length - d + i] = tempArr[i];
+        return arr;
+    }
+
+
+    //TODO Efficient Approach
+    private static int[] rotateArrayDPosEfficient(int[] arr, int d) {
+        reverseArray(arr, 0, d - 1);
+        reverseArray(arr, d, arr.length - 1);
+        reverseArray(arr, 0, arr.length - 1);
+        return arr;
+    }
+
+    private static int[] reverseArray(int[] arr, int low, int high) {
+        while (low < high) {
+            swap(arr, low, high);
+            high--;
+            low++;
+        }
+        return arr;
+    }
+
+    private static int[] swap(int[] arr, int low, int high) {
+        int temp = arr[low];
+        arr[low] = arr[high];
+        arr[high] = temp;
         return arr;
     }
 }
