@@ -13,6 +13,7 @@ public class Main {
         for (int num : nums) {
             curr = Math.max(curr * num, num);
             result = Math.max(curr, result);
+
         }
         return result;
     }
