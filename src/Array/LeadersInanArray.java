@@ -1,11 +1,6 @@
-public class Main {
+package Array;
 
-    public static void main(String[] args) {
-
-        int[] num1 = new int[]{7, 10, 4, 10, 6, 5, 2};
-//        findLeader(num1);
-        FindLeaderEfficient(num1);
-    }
+public class LeadersInanArray {
 
     private static void findLeader(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -32,11 +27,5 @@ public class Main {
         }
     }
 
-    public static void printArray(int[] nums) {
-        for (int i : nums) {
-            System.out.println(i);
-
-        }
-    }
 
 }
