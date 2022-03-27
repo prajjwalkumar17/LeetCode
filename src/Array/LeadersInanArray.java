@@ -1,5 +1,7 @@
 package Array;
 
+import java.util.ArrayList;
+
 public class LeadersInanArray {
 
     private static void findLeader(int[] arr) {
