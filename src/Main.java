@@ -1,42 +1,65 @@
+
+
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] num1 = new int[]{7, 10, 4, 10, 6, 5, 2};
-//        findLeader(num1);
-        FindLeaderEfficient(num1);
+        int[] num1 = new int[]{1, 2, 3, 4, 5, 90};
+        printArray(kthPalindrome(num1, 3));
     }
 
-    private static void findLeader(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            boolean flag = false;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] <= arr[j]) {
-                    flag = true;
-                    break;
-                }
 
-            }
-            if (!flag) System.out.println(arr[i]);
+    public static long[] kthPalindrome(int[] queries, int intLength) {
+        long[] result = new long[queries.length];
+        for (int i = 0; i < queries.length; i++) {
+            result[i] = nthPalindrome(queries[i], intLength);
         }
+        return result;
     }
 
-    public static void FindLeaderEfficient(int[] arr) {
-        int curr_Leader = arr[arr.length - 1];
-        System.out.println(curr_Leader);
-        for (int i = arr.length - 2; i > 0; i--) {
-            if (curr_Leader < arr[i]) {
-                curr_Leader = arr[i];
-                System.out.println(arr[i]);
-            }
+    // Utility function to reverse the number n
+    static int reverseNum(int n) {
+        int rem, rev = 0;
+        while (n > 0) {
+            rem = n % 10;
+            rev = rev * 10 + rem;
+            n /= 10;
         }
+        return rev;
     }
 
-    public static void printArray(int[] nums) {
-        for (int i : nums) {
+    // Boolean Function to check for palindromic
+// number
+    static boolean isPalindrom(int num) {
+        return num == reverseNum(num);
+    }
+
+    // Function for finding nth palindrome of k digits
+    static int nthPalindrome(int n, int k) {
+        // Get the smallest k digit number
+        int num = (int) Math.pow(10, k - 1);
+
+        while (true) {
+            // check the number is palindrom or not
+            if (isPalindrom(num))
+                --n;
+
+            // if n'th palindrome found break the loop
+            if (n == 0)
+                break;
+
+            // Increment number for checking next palindrome
+            ++num;
+        }
+
+        return num;
+    }
+
+
+    public static void printArray(long[] nums) {
+        for (long i : nums) {
             System.out.println(i);
 
         }
     }
-
 }
