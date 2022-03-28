@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public class Main {
 
@@ -6,7 +6,13 @@ public class Main {
 
         int[] num1 = new int[]{30, 10, 8, 2};
 
+
     }
+
+
+
+
+
 
 
 
