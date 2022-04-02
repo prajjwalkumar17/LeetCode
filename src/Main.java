@@ -1,11 +1,12 @@
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] num1 = new int[]{30, 10, 8, 2};
-
+        int[] num1 = new int[]{30,30, 10, 8, 2};
 
     }
 
@@ -18,10 +19,11 @@ public class Main {
 
 
 
-/*    public static void printArray(int[] nums) {
+
+    public static void printArray(int[] nums) {
         for (long i : nums) {
             System.out.println(i);
 
         }
-    }*/
+    }
 }
