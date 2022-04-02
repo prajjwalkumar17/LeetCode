@@ -2,15 +2,13 @@ import java.util.*;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
-        int[] num1 = new int[]{10, 10, 11, 10, 25, 30, 30};
+        int[] num1 = new int[]{3, 0, 1, 2, 5};
 
 
     }
-
-
-
 
 
 
