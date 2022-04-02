@@ -16,19 +16,20 @@ public class DuplicatesInUnsortedArray {
             mapOfArray.put(j, value);
         }
 
-        for(Map.Entry<Integer,Integer> entry:mapOfArray.entrySet()){
-            if(entry.getValue()>1)return true;}
+        for (Map.Entry<Integer, Integer> entry : mapOfArray.entrySet()) {
+            if (entry.getValue() > 1) return true;
+        }
         return false;
     }
 
 
-
-    public static Boolean IsArrayDuplicateUsingHashedSet(int[] nums){
-        HashSet<Integer> set=new HashSet<>();
-        for(int i: nums){
-            if(set.contains(i)){
+    public static Boolean
+    IsArrayDuplicateUsingHashedSet(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int i : nums) {
+            if (set.contains(i)) {
                 return true;
-            }else{
+            } else {
                 set.add(i);
             }
         }

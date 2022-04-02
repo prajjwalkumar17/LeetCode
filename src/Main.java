@@ -1,19 +1,13 @@
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] num1 = new int[]{30,30, 10, 8, 2};
+        int[] num1 = new int[]{10, 10, 11, 10, 25, 30, 30};
+
 
     }
-
-
-
-
-
 
 
 
