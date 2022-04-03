@@ -13,6 +13,17 @@ public class StockBuyAndSell {
     }
 
 
+    //LeetCode
+    private static int stockBuyandSellInOneDay(int[] prices) {
+        int overallProfit = 0;
+        int leastPrice = Integer.MAX_VALUE;
+        for (int price : prices) {
+            leastPrice = Math.min(leastPrice, price);
+            overallProfit = Math.max(overallProfit, price - leastPrice);
+        }
+        return overallProfit;
+    }
+
     public static int profitNaive(int[] arr, int start, int end) {
         if (end <= start) return 0;
         int profit = 0;
