@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
 
     public static void main(String[] args) {
 
-        int[] num1 = new int[]{1, 0, 1, 1, 1, 1, 0, 1, 1};
-
+        int[] num1 = new int[]{4, 9, 5};
 
     }
 

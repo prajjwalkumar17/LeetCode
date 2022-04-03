@@ -17,7 +17,7 @@ package questions450;
         Input: nums = [5,4,-1,7,8]
         Output: 23*/
 
-public class MaximumSubArray {
+public class KaadaneMaximumSubArray {
 
     public static void main(String[] args) {
         int[] array1 = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
