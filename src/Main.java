@@ -1,12 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 
 
     public static void main(String[] args) {
 
-        int[] num1 = new int[]{3, 2, 3};
+        int[] num1 = new int[]{1, 8, 30, -5, 20, 7};
 
     }
 
