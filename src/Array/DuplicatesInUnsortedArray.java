@@ -23,8 +23,7 @@ public class DuplicatesInUnsortedArray {
     }
 
 
-    public static Boolean
-    IsArrayDuplicateUsingHashedSet(int[] nums) {
+    public static Boolean IsArrayDuplicateUsingHashedSet(int[] nums) {
         HashSet<Integer> set = new HashSet<>();
         for (int i : nums) {
             if (set.contains(i)) {
