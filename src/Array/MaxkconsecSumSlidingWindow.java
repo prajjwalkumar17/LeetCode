@@ -1,5 +1,8 @@
 package Array;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MaxkconsecSumSlidingWindow {
     private static int SlidingWindowEFF(int[] arr, int k) {
         int currSum = 0;
