@@ -23,6 +23,18 @@ public class FirstUniqueChar {
         return (res == Integer.MAX_VALUE) ? -1 : res;
     }
 
+    //    public static int firstDuplicateChar(String s)
+//    {
+//        int CHAR=24;
+//        boolean[] listOfChars=new boolean[CHAR];
+//        int res=-1;
+//        for(int i=s.length()-1;i>=0;i--){
+//            if(!listOfChars[s.charAt(i)])listOfChars[s.charAt(i)]=true;
+//            else res=i;
+//        }
+//        return res;
+//    }
+
 
     private static int firstUniqueChar(String s) {
         for (int i = 0; i < s.length(); i++) {
