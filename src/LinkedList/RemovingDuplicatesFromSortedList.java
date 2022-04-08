@@ -15,31 +15,22 @@ public class RemovingDuplicatesFromSortedList {
 
 
         public ListNode removeDuplicates(ListNode head) {
-            if (head == null) {
-                return head;
-            }
+            if (head == null || head.next == null) return head;
             ListNode temp = head.next;
             ListNode curr = head;
-            if (curr.next == null) {
-                return head;
-            }
             while (temp.next != null) {
                 if (curr.val == temp.val) {
                     curr.next = temp.next;
                     temp = temp.next;
                 } else {
-                    temp = temp.next;
                     curr = curr.next;
+                    temp = temp.next;
                 }
             }
-            if (curr.val == temp.val) {
-                curr.next = null;
-            } else {
-                curr.next = temp;
-            }
+            if (curr.val == temp.val) curr.next = null;
+            else curr.next = temp;
             return head;
         }
+
     }
-
-
 }

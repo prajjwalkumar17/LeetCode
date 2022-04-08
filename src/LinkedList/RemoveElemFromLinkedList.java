@@ -4,7 +4,7 @@ public class RemoveElemFromLinkedList {
 
     public static class ListNode {
         int val;
-        Main.ListNode next;
+        ListNode next;
 
         public ListNode(int val) {
             this.val = val;
