@@ -21,15 +21,12 @@ public class Main {
     public static void main(String[] args) {
 
         int[] arr = new int[]{1, 1, 1, 2, 2, 3, 3, 3};
-//        topKFrequent(arr,2);
+        String s = "(])";
+//        System.out.println(isValid(s));
 
     }
 
 
-    //    System.out.println(map.keySet().toArray()[0]);
-    //        map.keySet().forEach((key) -> {
-//            System.out.println(key);
-//        });
     public static void printArray(int[] nums) {
         for (int i : nums) {
             System.out.println(i);
