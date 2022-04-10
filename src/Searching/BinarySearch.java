@@ -2,25 +2,54 @@ package Searching;
 
 public class BinarySearch {
 
-    private static int binary_SearchITERATIVE(int[] arr, int k) {
+    private static int binary_SearchITERATIVE(int[] nums, int target) {
         int low = 0;
-        int high = arr.length - 1;
+        int high = nums.length - 1;
         while (low <= high) {
             int mid = (high + low) / 2;
-            if (arr[mid] == k) return mid;
-            else if (arr[mid] > k) high = mid - 1;
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] > target) high = mid - 1;
             else low = mid + 1;
         }
         return -1;
     }
 
-    private static int binary_SearchRECURSIVE(int[] arr, int low, int high, int k) {
+    private static int binary_SearchRECURSIVE(int[] nums, int low, int high, int target) {
         if (low > high) return -1;
         int mid = (high + low) / 2;
-        if (arr[mid] == k) return mid;
-        else if (arr[mid] > k) return binary_SearchRECURSIVE(arr, low, mid - 1, k);
-        else return binary_SearchRECURSIVE(arr, mid + 1, high, k);
+        if (nums[mid] == target) return mid;
+        else if (nums[mid] > target) return binary_SearchRECURSIVE(nums, low, mid - 1, target);
+        else return binary_SearchRECURSIVE(nums, mid + 1, high, target);
     }
 
+    private static int binary_SearchRECURSIVEFirstIndex(int[] nums, int low, int high, int target) {
+        if (low > high) return -1;
+        int mid = (high + low) / 2;
+        if (nums[mid] == target) {
+            if (mid == 0 || nums[mid - 1] != nums[mid]) return mid;
+            else return binary_SearchRECURSIVEFirstIndex(nums, 0, mid - 1, target);
+        } else if (nums[mid] > target) return binary_SearchRECURSIVEFirstIndex(nums, low, mid - 1, target);
+        else return binary_SearchRECURSIVEFirstIndex(nums, mid + 1, high, target);
+    }
+
+    private static int binary_SearchITERATIVELastindex(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1;
+        while (low <= high) {
+            int mid = (high + low) / 2;
+            if (nums[mid] == target) {
+                //for first occurence
+//                if(mid==0 || nums[mid-1]!=nums[mid])
+//                return mid;
+//                else high=mid -1;
+                //for last Ocuurence
+                if (mid == nums.length - 1 || nums[mid + 1] != nums[mid])
+                    return mid;
+                else low = mid + 1;
+            } else if (nums[mid] > target) high = mid - 1;
+            else low = mid + 1;
+        }
+        return -1;
+    }
 
 }
