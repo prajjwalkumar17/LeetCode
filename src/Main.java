@@ -20,9 +20,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        int[] arr = new int[]{1, 1, 1, 2, 2, 3, 3, 3};
-        String s = "(])";
-//        System.out.println(isValid(s));
+        String[] arr = new String[]{"5", "2", "C", "D", "+"};
+
 
     }
 
