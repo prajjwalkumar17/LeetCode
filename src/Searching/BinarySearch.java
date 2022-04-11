@@ -38,11 +38,6 @@ public class BinarySearch {
         while (low <= high) {
             int mid = (high + low) / 2;
             if (nums[mid] == target) {
-                //for first occurence
-//                if(mid==0 || nums[mid-1]!=nums[mid])
-//                return mid;
-//                else high=mid -1;
-                //for last Ocuurence
                 if (mid == nums.length - 1 || nums[mid + 1] != nums[mid])
                     return mid;
                 else low = mid + 1;
