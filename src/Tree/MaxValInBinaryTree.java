@@ -1,6 +1,6 @@
 package Tree;
 
-public class MaxInBinaryTree {
+public class MaxValInBinaryTree {
     //    class TreeNode
     class TreeNode {
         int val;
