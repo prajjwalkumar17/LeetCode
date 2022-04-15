@@ -9,6 +9,12 @@ public class NonPrimitiveSorting {
 //        for(int i=0;i<arr.length;i++)
 //            System.out.println(arr[i].x+"   "+arr[i].y);
 
+    //Even odd sorting
+//
+//    Integer[] arr = new Integer[]{1, 31, 44, 55, 122, 11, 17, 54, 22};
+//        Arrays.sort(arr, new mycmp());
+//        System.out.println(Arrays.asList(arr));
+
     class Point implements Comparable<Point> {
         int x, y;
 
@@ -36,6 +42,14 @@ public class NonPrimitiveSorting {
 
             return -1;
         }
+    }
+}
+
+class mycmp implements Comparator<Integer> {
+    @Override
+    public int compare(Integer o1, Integer o2) {
+        if (o1 % 2 == 0 || o2 % 2 == 0) return -1;
+        else return 1;
     }
 }
 
