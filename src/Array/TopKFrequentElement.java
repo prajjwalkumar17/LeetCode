@@ -24,7 +24,7 @@ public class TopKFrequentElement {
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             list.add(new Pair(entry.getKey(), entry.getValue()));
         }
-        Collections.sort(list, new comparatorToSort());
+        Collections.sort(list);
         int[] res = new int[k];
         int count = 0;
         for (Pair p : list) {
@@ -37,7 +37,7 @@ public class TopKFrequentElement {
 
     }
 
-    static class Pair {
+    static class Pair implements Comparable<Pair> {
         int value;
         int freq;
 
@@ -45,19 +45,15 @@ public class TopKFrequentElement {
             this.value = value;
             this.freq = freq;
         }
-    }
-
-    static class comparatorToSort implements Comparator<Pair> {
 
         @Override
-        public int compare(Pair p1, Pair p2) {
-            if (p1.freq < p2.freq) return 1;
-            if (p1.freq == p2.freq) {
-                if (p1.value < p2.value) return 1;
+        public int compareTo(Pair o) {
+            if (this.freq < o.freq) return 1;
+            if (this.freq == o.freq) {
+                if (this.value < o.value) return 1;
                 else return -1;
             }
             return -1;
         }
     }
-
 }
