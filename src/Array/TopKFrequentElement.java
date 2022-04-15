@@ -15,7 +15,7 @@ import java.util.*;
 public class TopKFrequentElement {
 
     public static int[] topKFrequent(int[] nums, int k) {
-        Map<Integer, Integer> map = new TreeMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i : nums) {
             if (map.containsKey(i)) map.put(i, map.get(i) + 1);
             else map.put(i, 1);
