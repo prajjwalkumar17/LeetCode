@@ -5,9 +5,12 @@ public class Main {
         int[] num1 = new int[]{11, 22, 13, 84};
         char[] num2 = new char[]{'A', 'B', 'a', 'c', 'D'};
 //        System.out.println(Arrays.toString(InsertionSort(num1)));
+//        printnto1(7);
+//        print1ton(7);
 
 
     }
+
 
 //    private static int[] InsertionSort(int[] arr) {
 //        for(int i=1;i<arr.length-1;i++){
