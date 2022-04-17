@@ -2,28 +2,40 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] num1 = new int[]{11, 22, 13, 84};
-        char[] num2 = new char[]{'A', 'B', 'a', 'c', 'D'};
-//        System.out.println(Arrays.toString(InsertionSort(num1)));
-//        printnto1(7);
-//        print1ton(7);
+//        int[] num1 = new int[]{11, 22, 13, 84};
 
+
+        TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(1);
+        root.right = new TreeNode(7);
+//        root.left.left = new TreeNode(4);
+//        root.left.right = new TreeNode(5);
+        increasingBST(root);
+    }
+
+
+    public static void increasingBST(TreeNode root) {
+        if (root == null) return;
+        increasingBST(root.left);
+        System.out.println(root.val);
 
     }
 
-//    private static int[] InsertionSort(int[] arr) {
-//        for(int i=1;i<arr.length-1;i++){
-//            int key=arr[i];
-//            int j=i-1;
-//            while(j>=0 && key<arr[j])
-//            {
-//                arr[j+1]=arr[j];
-//                j--;
-//            }
-//            arr[j+1]=key;
-//        }
-//        return arr;
-//    }
 
+}
 
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int val) {
+        this.val = val;
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
 }
