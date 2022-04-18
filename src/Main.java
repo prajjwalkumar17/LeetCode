@@ -5,22 +5,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         int[] num1 = new int[]{1, 2, 3};
-
-        String str = "abcba";
-
-        String s = "Let's take LeetCode contest";
+        int[] num2 = new int[]{1, 3, 5, 6, 7};
 
 
-    }
-
-
-    private static void reverseWords(String[] inputWords, int length, int index, List<String> resArray) {
-        if (index == length) return;
-        StringBuilder res = new StringBuilder();
-        res.append(inputWords[index]);
-        res.reverse();
-        resArray.add(res.toString());
-        reverseWords(inputWords, length, index + 1, resArray);
     }
 
 
