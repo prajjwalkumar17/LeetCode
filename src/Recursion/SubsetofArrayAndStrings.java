@@ -7,6 +7,7 @@ public class SubsetofArrayAndStrings {
             return;
         }
 
+        //array was cheated
 
         printSubset(str, curr, i + 1);
         printSubset(str, curr + str.charAt(i), i + 1);
