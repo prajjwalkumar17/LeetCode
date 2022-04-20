@@ -1,6 +1,28 @@
+
 package LinkedList;
 
+
 public class RemoveNthNodeFromEnd {
+
+
+//    public static ListNode removeNthFromEndEFFICIENT(ListNode head, int n) {
+//        if (head == null) return head;
+//        ListNode slow=head,fast=head;
+//        int i=0;
+//        while(fast!=null && i<n){
+//            fast=fast.next;i++;
+//        }
+//        if(fast==null)return head.next;
+//
+//        while(fast.next!=null){
+//            fast=fast.next;
+//            slow=slow.next;
+//        }
+//        slow.next=slow.next.next;
+//
+//
+//        return head;
+//    }
 
 
 //    public static ListNode removeNthFromEndNAIVE(ListNode head, int n) {
@@ -29,5 +51,6 @@ public class RemoveNthNodeFromEnd {
 //        return head;
 //    }
 
-
 }
+
+
