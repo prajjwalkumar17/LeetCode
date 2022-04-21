@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        int[] num2 = new int[]{2, 4, 1, 3, 5};
+        int[] num = new int[]{5, 3, 12, 8, 5};
 //        int[] num1 = new int[]{1, 3, -5};
 //        ListNode head = new ListNode(10);
 //        head.next = new ListNode(20);
@@ -11,7 +11,7 @@ public class Main {
 //        head.next.next.next = new ListNode(40);
 //        head.next.next.next.next = new ListNode(50);
 
-//        System.out.println((countInversion(num2,0,num2.length-1)));
+//        System.out.println((naivePartition(num,0,num.length-1,0)));
 
     }
 
