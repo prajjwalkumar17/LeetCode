@@ -9,12 +9,12 @@ public class lumotoPartition {
         int pivot = arr[high];
         //todo swap all the elems that are low than pivot to inc the lessthan equalto windon
         for (int j = low; j <= high - 1; j++) {
-            if (arr[j] < pivot) swap(arr, ++index, j);
+            if (arr[j] <= pivot) swap(arr, ++index, j);
         }
         //todo to swap the pivot to the specified i+1th pos as upto i there are less than eqaul to elems
         swap(arr, ++index, high);
         //todo return i+1
-        return index + 1;
+        return index;
     }
 
     private static void swap(int[] arr, int low, int high) {
