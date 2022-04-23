@@ -1,15 +1,17 @@
 import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
         String[] num = new String[]{"3", "21", "12", "2"};
 
-//        System.out.println(num[2].compareTo(num[0]));
 
-        System.out.println(findKthLargest(num, 3));
+
+
 
     }
-
+/*
     public static String findKthLargest(String[] nums, int k) {
         int l = 0, h = nums.length - 1;
         int reqIndex = nums.length - k;
@@ -38,7 +40,7 @@ public class Main {
         arr[l] = arr[h];
         arr[h] = temp;
 
-    }
+    }*/
 
 
 }
