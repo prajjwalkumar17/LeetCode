@@ -4,13 +4,25 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        String[] num = new String[]{"3", "21", "12", "2"};
-
-
-
-
+        int[] num = new int[]{3, 21, 12, 2};
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
     public static String findKthLargest(String[] nums, int k) {
         int l = 0, h = nums.length - 1;
