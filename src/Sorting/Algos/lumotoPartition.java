@@ -1,4 +1,4 @@
-package Sorting;
+package Sorting.Algos;
 
 public class lumotoPartition {
     private static int lumotoPartion(int[] arr, int low, int high) {

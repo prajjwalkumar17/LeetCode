@@ -1,4 +1,4 @@
-package Sorting;
+package Sorting.Algos;
 
 public class NaivePartition {
     static int naivePartition(int[] arr, int low, int high, int p) {

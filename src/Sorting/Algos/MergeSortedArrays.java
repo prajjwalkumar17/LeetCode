@@ -1,4 +1,4 @@
-package Sorting;
+package Sorting.Algos;
 
 public class MergeSortedArrays {
     private static void mergeArrays(int[] num1, int[] num2) {

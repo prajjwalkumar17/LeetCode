@@ -1,4 +1,4 @@
-package Sorting;
+package Sorting.Algos;
 
 public class HoarePartition {
     static int HoarePartion(int[] arr, int low, int high) {

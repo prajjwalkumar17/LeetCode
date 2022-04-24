@@ -1,4 +1,4 @@
-package Sorting;
+package Sorting.Algos;
 
 public class InsertionSort {
     public int[] insertionSort(int[] arr) {

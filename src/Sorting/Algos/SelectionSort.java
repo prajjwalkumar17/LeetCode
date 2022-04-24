@@ -1,4 +1,4 @@
-package Sorting;
+package Sorting.Algos;
 
 public class SelectionSort {
     static int[] Selectionsort(int[] arr) {

@@ -1,14 +1,13 @@
-import java.util.*;
+package Sorting;
 
+import java.util.Arrays;
 
-public class Main {
-    public static void main(String[] args) {
-        //TODO Pick m packets such that diff between the high and low is min
-        int[] num = new int[]{7, 3, 2, 4, 9, 12, 56};
-        int m = 3;
-        minDifference(num, m);
+public class ChocolateDistribution {
+//    //TODO Pick m packets such that diff between the high and low is min
+//    int[] num=new int[]{7,3,2,4,9,12,56};
+//    int m=3;
+//    minDifference(num,m);
 
-    }
 
     private static void minDifference(int[] arr, int m) {
         Arrays.sort(arr);
@@ -20,5 +19,5 @@ public class Main {
 
     }
 
-}
 
+}
