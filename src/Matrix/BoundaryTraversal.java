@@ -1,14 +1,17 @@
 package Matrix;
 
 public class BoundaryTraversal {
+    int[][] num = new int[][]
+            {
+                    {1, 2, 3, 4},
+                    {5, 6, 7, 8},
+                    {9, 10, 11, 12},
+                    {9, 10, 11, 12}
+            };
+
+    //    boundaryTraversal(num);
     private static void boundaryTraversal(int[][] arr) {
-        int[][] num = new int[][]
-                {
-                        {1, 2, 3, 4},
-                        {5, 6, 7, 8},
-                        {9, 10, 11, 12}
-                };
-        boundaryTraversal(num);
+
         if (arr.length == 1)//only one row
             for (int j = 0; j < arr[0].length; j++) {
                 System.out.println(arr[0][j] + " ");
@@ -29,9 +32,8 @@ public class BoundaryTraversal {
             for (int j = arr[0].length - 2; j >= 0; j--)
                 System.out.print(arr[arr.length - 1][j] + " ");
 
-            for (int j = 1; j < arr.length - 1; j++)
+            for (int j = arr.length - 2; j >= 1; j--)
                 System.out.print(arr[j][0] + " ");
-
 
         }
     }
