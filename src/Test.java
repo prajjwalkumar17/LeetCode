@@ -4,35 +4,49 @@ public class Test {
 
 
     public static void main(String[] args) {
-        //System.out.println(Arrays.toString(InsertionSort(num1)));
-//        char[] num2 = new char[]{'A', 'B', 'a', 'c', 'D'};
-//        printArray(num1);
+        int[] num = new int[]{2, 5, 3, 9, 5, 3};
 
-        String s = "11111222223";
-//        digitSum(s,3);
-
-        int[] num = new int[]{5, 5, 5, 5};
-//int[] num=new int[]{218,211,220,218,211,218,218,217,213,215,219,214,210,210,212,219,214,211,216,218,211,216,218,218,212,210,211,211,215,216,212,219,219,210,217,218,217,217,213,216,217,212,217,219,215,217,215,218,210,218,218,210,212,219,217,214,216,218,220,217,215,215,213,210,212,211,215,218,214,212,211,216,210,216,218,220,211,211,212,218,218,210,215,210,215,213,212,220,217,219,214,216,217,214,215,213,218,219,220,219,215,216,219,218,211,215,210,214,210,215,219,214,212,217,219,215,214,217,213,219,213,218,217,214,216,219,217,217,211,214,214,220,220,216,218,216,220,211,213,219,218,219,215,216,216,220,211,214,212,219,210,215,218,218,220,210,214,211,217,214,220,214,213,210,219,213,214,210,212,216,210,217,211,215,217,213,214,210,217,212,217,216,217,210,211,213,214,220,211,216,214,211,217,211,211,215,219,219,213,216};
-
-//        System.out.println(digitSum(s,3));
-//        System.out.println(findClosestNumber(num1));
-    }
-
-
-    public static void digitSum(String s, int k) {
-        List<Integer> arr = new ArrayList<>();
-        for (char c : s.toCharArray()) {
-            arr.add(Character.getNumericValue(c));
-        }
-
-
-        for (int i = 0; i < arr.size(); i += k) {
-
-        }
-        System.out.println(arr);
+        minavgDiff(num);
 
 
     }
+
+    private static int minavgDiff(int[] nums) {
+        if (nums.length == 1) return 0;
+        int res = Integer.MAX_VALUE;
+        int sum = 0;
+        for (int it : nums)
+            sum += it;
+
+        int resultIndex = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int beforeVal = 0, afterVal = 0;
+            int beforeIter = 0;
+            while (beforeIter <= i) {
+                beforeVal += nums[beforeIter];
+                beforeIter++;
+            }
+
+            afterVal = sum - beforeVal;
+
+
+            try {
+                afterVal = afterVal / (nums.length - i - 1);
+            } catch (Exception e) {
+                if (nums.length - i - 1 == 0) afterVal = 0;
+            }
+
+            beforeVal = beforeVal / (i + 1);
+//            int diff=Math.abs(beforeVal-afterVal);
+
+            int temp = res;
+            res = Math.min(res, Math.abs(beforeVal - afterVal));
+            resultIndex = temp == res ? resultIndex : i;
+            System.out.println(resultIndex);
+        }
+        return resultIndex;
+    }
+
 
 }
 
