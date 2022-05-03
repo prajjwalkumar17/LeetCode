@@ -1,5 +1,8 @@
 package Strings;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class BackspaceStringCompare {
     public static boolean backspaceCompare(String S, String T) {
         int i = S.length() - 1, j = T.length() - 1;
