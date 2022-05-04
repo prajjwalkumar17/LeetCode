@@ -1,18 +1,10 @@
-import jdk.jfr.Label;
+package Hashing;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-
-public class Main {
-    public static void main(String[] args) {
-
-        int[] nums1 = new int[]{2, 5, 4, 4, 1, 3, 4, 4, 1, 4, 4, 1, 2, 1, 2, 2, 3, 2, 4, 2};
-        int n = 3;
-        System.out.println(pairWithGivenSum(nums1, n));
-
-
-    }
-
+public class NoOfPairsWithGivenSum {
+    //    https://leetcode.com/problems/max-number-of-k-sum-pairs/
     private static int NoOfpairWithGivenSum(int[] nums1, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         int count = 0;
@@ -25,4 +17,3 @@ public class Main {
         return count;
     }
 }
-
