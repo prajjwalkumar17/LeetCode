@@ -1,18 +1,9 @@
-import jdk.jfr.Label;
+package Hashing;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
-
-public class Main {
-    public static void main(String[] args) {
-
-        int[] nums1 = new int[]{2, 6, 2, 2, 3, 5, 1, 5};
-        int n = 82;
-        System.out.println(pairWithGivenSum(nums1, n));
-
-
-    }
-
+public class pairWithGivensum2sum {
     private static boolean pairWithGivenSum(int[] nums1, int n) {
         Set<Integer> set = new HashSet<>();
         for (int i : nums1) {
@@ -21,7 +12,4 @@ public class Main {
         }
         return false;
     }
-
-
 }
-
