@@ -2,6 +2,7 @@ package Hashing;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Stack;
 
 public class SubArrayWithGivenSum {
     private static boolean subarrayWithGivenSum(int[] num, int sum) {
@@ -12,6 +13,7 @@ public class SubArrayWithGivenSum {
             if (set.contains(prev_sum - sum) || prev_sum == sum) return true;
             else set.add(prev_sum);
         }
+        Stack<Integer> stack = new Stack<>();
         return false;
     }
 }

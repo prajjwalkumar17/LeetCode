@@ -2,8 +2,10 @@ package Stack;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class QueueFromStack {
+
     Deque<Integer> s1 = new LinkedList<>();
     Deque<Integer> s2 = new LinkedList<>();
 
