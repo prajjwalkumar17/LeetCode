@@ -6,9 +6,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        int[] nums1 = new int[]{8, 3, 1, 5, -6, 6, 2, 2};
-        int sum = 4;
-        longestSubarrayWithGivenSum(nums1, sum);
+        int[] nums1 = new int[]{1, 1, 0, 0, 1, 1, 0, 1};
+        int sum = 0;
 
     }
 
