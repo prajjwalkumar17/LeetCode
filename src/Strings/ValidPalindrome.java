@@ -30,6 +30,4 @@ public class ValidPalindrome {
         }
         return true;
     }
-
-
 }

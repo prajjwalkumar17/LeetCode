@@ -1,18 +1,7 @@
-import jdk.jfr.Label;
+package Hashing;
 
-import java.util.*;
-
-
-public class Main {
-    public static void main(String[] args) {
-
-        int[] nums1 = new int[]{0, 1, 0, 0, 0, 0};
-        int[] nums2 = new int[]{1, 0, 1, 0, 0, 1};
-        subArraySameIndexedSum(nums1, nums2);
-
-    }
-
-    private static void subArraySameIndexedSum(int[] nums1, int[] nums2) {
+public class SubarraySameIndexedSum {
+    private static void subArraySameIndexedSumNAIVE(int[] nums1, int[] nums2) {
         int res = 0;
         for (int i = 0; i < nums1.length; i++) {
             int curr1 = 0;
@@ -26,10 +15,4 @@ public class Main {
         }
         System.out.println(res);
     }
-
-
 }
-
-
-
-
