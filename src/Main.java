@@ -6,8 +6,9 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        int[] nums1 = new int[]{1, 3, 4, 3, 3, 2, 9, 10};
-        System.out.println(longestConsecutiveSubsequence(nums1));
+//        int[] nums1 = new int[]{1, 3, 4, 3, 3, 2, 9, 10};
+//        System.out.println(longestConsecutiveSubsequence(nums1));
+        String s1 = "abccbda";
 
     }
 
