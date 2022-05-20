@@ -16,10 +16,6 @@ public class Main {
 
     }
 
-    private static int leftMostRepeatingcharBEST(String s1) {
-        int[] count = new int[CHAR];
-
-    }
 
 
     private static int longestConsecutiveSubsequence(int[] nums) {
