@@ -12,12 +12,10 @@ public class Main {
 //        int[] nums1 = new int[]{1, 3, 4, 3, 3, 2, 9, 10};
 //        System.out.println(longestConsecutiveSubsequence(nums1));
 //        System.out.println(leftMostRepeatingcharBEST(s1));
-        String txt = "ABCDABCD";
+        String txt = "ABCABCD";
         String pat = "ABCD";
-        matchPatternNaive(txt, pat);
+        matchPatternNaiveOptimized(txt, pat);
     }
-
-
 
 
 }
