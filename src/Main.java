@@ -7,15 +7,12 @@ public class Main {
     static final int CHAR = 256;
 
     public static void main(String[] args) {
-
-
-//        int[] nums1 = new int[]{1, 3, 4, 3, 3, 2, 9, 10};
-//        System.out.println(longestConsecutiveSubsequence(nums1));
-//        System.out.println(leftMostRepeatingcharBEST(s1));
-        String txt = "ABCABCD";
-        String pat = "ABCD";
-        matchPatternNaiveOptimized(txt, pat);
+        int[] nums1 = new int[]{10, 20, 10, 10, 30, 40};
+        int k = 4;
+//        System.out.println(distinctElementInWindows(nums1, k));
     }
+
+
 
 
 }
