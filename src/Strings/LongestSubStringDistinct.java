@@ -1,17 +1,7 @@
-import jdk.jfr.Label;
+package Strings;
 
-import java.util.*;
-
-
-public class Main {
-    static final int CHAR = 256;
-
-    public static void main(String[] args) {
-        String txt = "abacd";
-        longestDistinct(txt);
-    }
-
-    private static int longestDistinct(String txt) {
+public class LongestSubStringDistinct {
+    private static int longestDistinctNAIVE(String txt) {
         int res = 0;
         int n = txt.length();
         for (int i = 0; i < n; i++) {
@@ -26,10 +16,4 @@ public class Main {
         }
         return res;
     }
-
-
 }
-
-
-
-
