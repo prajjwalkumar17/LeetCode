@@ -4,30 +4,20 @@ public class Main {
     static final int CHAR = 256;
 
     public static void main(String[] args) {
-//        Node  head=new Node(10);
-//        head.next=new Node(20);
-//        head.next.next=new Node(30);
-        Node newHead = null;
-        newHead = insertAtEnd(newHead, 0);
-        newHead = insertAtEnd(newHead, 10);
-        newHead = insertAtEnd(newHead, 20);
-        newHead = insertAtEnd(newHead, 30);
-        newHead = insertAtEnd(newHead, 40);
-        newHead = insertAtEnd(newHead, 50);
-        printlist(newHead);
+        Node head = new Node(10);
+        head.next = new Node(20);
+        head.next.next = new Node(30);
+        printlist(deleteAtEnd(head));
     }
 
-    private static Node insertAtEnd(Node head, int i) {
-        if (head == null) {
-            head = new Node(i);
-            return head;
+    private static Node deleteAtEnd(Node head) {
+        if (head == null || head.next == null) return null;
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
         }
-        Node res = head;
-        while (head.next != null) {
-            head = head.next;
-        }
-        head.next = new Node(i);
-        return res;
+        temp.next = null;
+        return head;
     }
 
     static void printlist(Node list) {
