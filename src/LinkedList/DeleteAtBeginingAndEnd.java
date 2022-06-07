@@ -15,9 +15,9 @@ public class DeleteAtBeginingAndEnd {
 //        return head.next;
 //    }
 
-//    private static Main.Node deleteAtEnd(Main.Node head) {
+//    private static Node deleteAtEnd(Node head) {
 //        if(head==null || head.next==null)return null;
-//        Main.Node temp=head;
+//        Node temp=head;
 //        while(temp.next.next!=null){
 //            temp=temp.next;
 //        }

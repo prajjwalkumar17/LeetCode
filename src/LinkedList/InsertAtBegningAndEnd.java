@@ -1,12 +1,6 @@
 package LinkedList;
 
 public class InsertAtBegningAndEnd {
-    private static Node insertAtBegining(Node head, int i) {
-        Node temp = new Node(i);
-//        temp.next=head;
-        return temp;
-    }
-
     public static class Node {
         int data;
         Node next;
@@ -17,16 +11,23 @@ public class InsertAtBegningAndEnd {
         }
     }
 
-//    private static Main.Node insertAtEnd(Main.Node head, int i) {
+//    private static Node insertAtBegining(Node head, int i) {
+//        Node temp = new Node(i);
+//        temp.next=head;
+//        return temp;
+//    }
+
+
+//    private static Node insertAtEnd(Node head, int i) {
 //        if(head==null){
-//            head=new Main.Node(i);
+//            head=new Node(i);
 //            return head;
 //        }
-//        Main.Node res=head;
+//        Node res=head;
 //        while(head.next!=null){
 //            head=head.next;
 //        }
-//        head.next= new Main.Node(i);
+//        head.next= new Node(i);
 //        return res;
 //    }
 
