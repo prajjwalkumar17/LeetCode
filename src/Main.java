@@ -1,36 +1,33 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         Node head = new Node(10);
         head.next = new Node(20);
         head.next.next = new Node(30);
-        printlist(insertAtPos(head, 2, 4));
+        head.next.next.next = new Node(40);
+        head.next.next.next.next = new Node(50);
+        System.out.println(searchinsllREC(head, 30));
     }
 
-    private static Node insertAtPos(Node head, int data, int pos) {
-        Node temp = head;
-        int i = 0;
-        Node res = new Node(data);
-        while (temp != null) {
-            temp = temp.next;
-            i++;
+    private static int searchinsllITER(Node head, int i) {
+        int count = 0;
+        while (head != null) {
+            count++;
+            if (head.data == i) return count;
+            head = head.next;
         }
-        if (pos == 1) {
-            //if the pos is head
-            res.next = head;
-            return res;
-        }
-        //legal pos
-        //if the pos is something diff than head\
-        Node tem = head;
-        for (int j = 1; j <= pos - 2 && tem != null; j++)
-            tem = tem.next;
+        return -1;
+    }
 
-        if (tem == null) return head;
-        res.next = tem.next;
-        tem.next = res;
-        return head;
+    private static int searchinsllREC(Node head, int i) {
+        if (head == null) return -1;
+        if (head.data == i) return 1;
+        else {
+            int res = searchinsllREC(head.next, i);
+            if (res == -1) return -1;
+            else return res + 1;
+        }
+
+
     }
 
     static void printlist(Node list) {
@@ -48,7 +45,6 @@ public class Main {
             this.next = null;
         }
     }
-
 }
 
 

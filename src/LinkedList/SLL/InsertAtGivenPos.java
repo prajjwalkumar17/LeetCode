@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SLL;
 
 public class InsertAtGivenPos {
 //    private static Main.Node insertAtPos(Main.Node head, int data, int pos) {

@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SLL;
 
 public class MidElem {
 //    public static ListNode middleNode(ListNode head) {

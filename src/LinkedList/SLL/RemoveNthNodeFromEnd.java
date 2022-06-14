@@ -1,5 +1,5 @@
 
-package LinkedList;
+package LinkedList.SLL;
 
 
 public class RemoveNthNodeFromEnd {

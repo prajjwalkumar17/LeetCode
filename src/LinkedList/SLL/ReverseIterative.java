@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SLL;
 
 public class ReverseIterative {
     public static class ListNode {

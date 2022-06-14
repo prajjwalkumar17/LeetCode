@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SLL;
 
 public class DeleteAtBeginingAndEnd {
     public static class Node {
