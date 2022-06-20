@@ -5,8 +5,8 @@ public class DLL {
 
     public static class Node {
         int data;
-        Main.Node next;
-        Main.Node prev;
+        Node next;
+        Node prev;
 
         public Node(int data) {
             this.data = data;
@@ -14,4 +14,5 @@ public class DLL {
             this.prev = null;
         }
     }
+
 }
