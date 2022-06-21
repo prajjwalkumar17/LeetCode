@@ -9,16 +9,16 @@ public class Main {
         head.next.next = new Node(30);
         head.next.next.next = new Node(40);
         head.next.next.next.next = new Node(50);
-        printlist(insertAtEnd(head, 0));
+        printlist(deleteEndNode(head));
     }
 
-    public static Node insertAtEnd(Node head, int data) {
-        Node temp = new Node(data);
+    public static Node deleteEndNode(Node head) {
+        if (head == null) return null;
+        if (head.next == null) return null;
         Node trav = head;
         while (trav.next != null)
             trav = trav.next;
-        trav.next = temp;
-        temp.prev = trav;
+        trav.prev.next = null;
         return head;
     }
 
