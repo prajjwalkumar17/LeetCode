@@ -3,16 +3,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Node head = new Node(10);
-        Node temp1 = new Node(20);
-        Node temp2 = new Node(30);
-        Node temp3 = new Node(40);
-        head.next = temp1;
-        temp1.prev = head;
-        temp1.next = temp2;
-        temp2.prev = temp1;
-        temp2.next = temp3;
-        temp3.prev = temp2;
-//        printlist(reverseDLL(head));
+        head.next = new Node(20);
+        head.next.next = new Node(30);
+        head.next.next.next = new Node(40);
+        head.next.next.next.next = head;
+        printCLL(head);
+    }
+
+    private static void printCLL(Node head) {
+        if (head == null) return;
+        Node curr = head;
+        do {
+            System.out.println(curr.data);
+            curr = curr.next;
+        } while (curr != head);
     }
 
 
@@ -25,12 +29,10 @@ public class Main {
     public static class Node {
         int data;
         Node next;
-        Node prev;
 
         public Node(int data) {
             this.data = data;
             this.next = null;
-            this.prev = null;
         }
     }
 }
