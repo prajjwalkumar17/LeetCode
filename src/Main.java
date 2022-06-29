@@ -7,14 +7,22 @@ public class Main {
         head.next.next = new Node(30);
         head.next.next.next = new Node(40);
         head.next.next.next.next = head;
-        printCLL(deleteHead(head));
+        printCLL(deletekthNode(head, 2));
     }
 
-    private static Node deleteHeadEFF(Node head) {
+    private static Node deletekthNode(Node head, int k) {
         if (head == null || head.next == head) return null;
-        head.data = head.next.data;
-        head.next = head.next.next;
-        return head;
+        if (k == 1) {
+            head.data = head.next.data;
+            head.next = head.next.next;
+            return head;
+        } else {
+            Node temp = head;
+            for (int i = 0; i < k - 2; i++)
+                temp = temp.next;
+            temp.next = temp.next.next;
+            return head;
+        }
     }
 
     private static void printCLL(Node head) {
@@ -26,12 +34,6 @@ public class Main {
         } while (curr != head);
     }
 
-
-    static void printlist(Node list) {
-        if (list == null) return;
-        System.out.println(list.data);
-        printlist(list.next);
-    }
 
     public static class Node {
         int data;
