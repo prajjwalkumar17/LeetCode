@@ -7,11 +7,20 @@ public class Main {
         node.next.next.next = new Node(5);
         node.next.next.next.next = new Node(6);
 
-        while (node != null) {
-            System.out.println(node.data);
-            node = node.next;
+        Node res = reverseRECList(node, null);
+        while (res != null) {
+            System.out.println(res.data);
+            res = res.next;
         }
     }
+
+    private static Node reverseRECList(Node curr, Node prev) {
+        if (curr == null) return prev;
+        Node next = curr.next;
+        curr.next = prev;
+        return reverseRECList(next, curr);
+    }
+
 
     public static class Node {
         int data;
