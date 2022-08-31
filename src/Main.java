@@ -1,33 +1,28 @@
 public class Main {
 
     public static void main(String[] args) {
-        Node node = new Node(2);
-        node.next = new Node(3);
-        node.next.next = new Node(4);
-        node.next.next.next = new Node(5);
-        node.next.next.next.next = new Node(6);
+        ListNode node = new ListNode(7);
+        node.next = new ListNode(9);
+        node.next.next = new ListNode(2);
+        node.next.next.next = new ListNode(10);
+        node.next.next.next.next = new ListNode(1);
+        node.next.next.next.next.next = new ListNode(8);
+        node.next.next.next.next.next.next = new ListNode(6);
 
-        Node res = reverseRECList(node, null);
-        while (res != null) {
-            System.out.println(res.data);
-            res = res.next;
-        }
-    }
-
-    private static Node reverseRECList(Node curr, Node prev) {
-        if (curr == null) return prev;
-        Node next = curr.next;
-        curr.next = prev;
-        return reverseRECList(next, curr);
+//        ListNode res = reverseSpecified(node, 1,7);
+//        while (res != null) {
+//            System.out.println(res.val);
+//            res = res.next;
+//        }
     }
 
 
-    public static class Node {
-        int data;
-        Node next;
+    public static class ListNode {
+        int val;
+        ListNode next;
 
-        public Node(int data) {
-            this.data = data;
+        public ListNode(int val) {
+            this.val = val;
             this.next = null;
         }
     }
