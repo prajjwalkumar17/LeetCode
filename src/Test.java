@@ -13,8 +13,6 @@ public class Test {
         int x = 20;
         int e = res(p, y, z, x);
         System.out.println(e);
-
-
     }
 
     public static int res(int a, int b, int c, int d) {
