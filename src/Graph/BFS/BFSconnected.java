@@ -1,10 +1,10 @@
-package Graph;
+package Graph.BFS;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BFS {
+public class BFSconnected {
     private static void bfsTraversal(ArrayList<ArrayList<Integer>> list, int v, int s) {
         Queue<Integer> q = new LinkedList<Integer>();
         boolean visited[] = new boolean[v + 1];
