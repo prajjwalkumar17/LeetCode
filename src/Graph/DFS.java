@@ -1,9 +1,8 @@
+package Graph;
+
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
-public class Main {
-
+public class DFS {
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
         int nofV = 5;
@@ -28,6 +27,19 @@ public class Main {
 
     }
 
+    private static void printGraph(ArrayList<ArrayList<Integer>> list, int v) {
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.get(i).size(); j++)
+                System.out.println(list.get(i).get(j));
+            System.out.println();
+        }
+    }
+
+    public static void addEdge(ArrayList<ArrayList<Integer>> list, int u, int v) {
+        list.get(u).add(v);
+        list.get(v).add(u);
+    }
+
     private static void DFS(ArrayList<ArrayList<Integer>> list, int nofV, int source) {
         boolean[] visited = new boolean[nofV];
         dfsREC(list, source, visited);
@@ -41,23 +53,4 @@ public class Main {
                 dfsREC(list, u, visited);
         }
     }
-
-    private static void printGraph(ArrayList<ArrayList<Integer>> list, int v) {
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = 0; j < list.get(i).size(); j++)
-                System.out.println(list.get(i).get(j));
-            System.out.println();
-        }
-    }
-
-    public static void addEdge(ArrayList<ArrayList<Integer>> list, int u, int v) {
-        list.get(u).add(v);
-        list.get(v).add(u);
-    }
 }
-
-
-
-
-
-
