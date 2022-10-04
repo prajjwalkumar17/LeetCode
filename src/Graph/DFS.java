@@ -9,14 +9,6 @@ public class DFS {
         int source = 0;
         for (int i = 0; i < nofV; i++)
             list.add(new ArrayList<Integer>());
-        //BFS
-//        addEdge(list, 0, 1);
-//        addEdge(list, 0, 2);
-//        addEdge(list, 1, 3);
-//        addEdge(list, 2, 3);
-//        addEdge(list, 4, 5);
-//        addEdge(list, 4, 6);
-//        addEdge(list, 5, 6);
         addEdge(list, 0, 1);
         addEdge(list, 0, 2);
         addEdge(list, 1, 3);
@@ -26,7 +18,6 @@ public class DFS {
         DFS(list, nofV, source);
 
     }
-
     private static void printGraph(ArrayList<ArrayList<Integer>> list, int v) {
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.get(i).size(); j++)
@@ -34,7 +25,6 @@ public class DFS {
             System.out.println();
         }
     }
-
     public static void addEdge(ArrayList<ArrayList<Integer>> list, int u, int v) {
         list.get(u).add(v);
         list.get(v).add(u);
