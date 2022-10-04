@@ -11,11 +11,9 @@ public class DFS {
             list.add(new ArrayList<Integer>());
         addEdge(list, 0, 1);
         addEdge(list, 0, 2);
-        addEdge(list, 1, 3);
-        addEdge(list, 1, 4);
-        addEdge(list, 2, 3);
+        addEdge(list, 1, 2);
         addEdge(list, 3, 4);
-        DFS(list, nofV, source);
+        DFS(list, nofV);
 
     }
     private static void printGraph(ArrayList<ArrayList<Integer>> list, int v) {
@@ -30,9 +28,12 @@ public class DFS {
         list.get(v).add(u);
     }
 
-    private static void DFS(ArrayList<ArrayList<Integer>> list, int nofV, int source) {
+    private static void DFS(ArrayList<ArrayList<Integer>> list, int nofV) {
         boolean[] visited = new boolean[nofV];
-        dfsREC(list, source, visited);
+        for (int i = 0; i < nofV; i++) {
+            if (!visited[i])
+                dfsREC(list, i, visited);
+        }
     }
 
     private static void dfsREC(ArrayList<ArrayList<Integer>> list, int source, boolean[] visited) {
