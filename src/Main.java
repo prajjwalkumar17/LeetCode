@@ -7,17 +7,14 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
-        int nofV = 4;
-        int source = 0;
+        int nofV = 5;
         for (int i = 0; i < nofV; i++)
             list.add(new ArrayList<Integer>());
-        //BFS
         addEdge(list, 0, 1);
-        addEdge(list, 0, 2);
         addEdge(list, 1, 2);
         addEdge(list, 2, 3);
-        addEdge(list, 1, 3);
-
+        addEdge(list, 3, 4);
+        System.out.println(detectCycle(list, nofV));
     }
 
 
