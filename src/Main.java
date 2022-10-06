@@ -7,13 +7,15 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
-        int nofV = 5;
+        int nofV = 6;
         for (int i = 0; i < nofV; i++)
             list.add(new ArrayList<Integer>());
         addEdge(list, 0, 1);
-        addEdge(list, 1, 2);
+        addEdge(list, 2, 1);
         addEdge(list, 2, 3);
         addEdge(list, 3, 4);
+        addEdge(list, 4, 5);
+        addEdge(list, 5, 3);
         System.out.println(detectCycle(list, nofV));
     }
 
@@ -25,7 +27,6 @@ public class Main {
             System.out.println();
         }
     }
-
     public static void addEdge(ArrayList<ArrayList<Integer>> list, int u, int v) {
         list.get(u).add(v);
         list.get(v).add(u);
