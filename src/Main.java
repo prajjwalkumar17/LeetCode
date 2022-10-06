@@ -1,19 +1,21 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 
 public class Main {
 
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
-        int nofV = 4;
+        int nofV = 5;
         for (int i = 0; i < nofV; i++)
             list.add(new ArrayList<Integer>());
         addEdge(list, 0, 1);
-        addEdge(list, 1, 2);
+        addEdge(list, 1, 3);
         addEdge(list, 2, 3);
-        System.out.println(cycleDetection2(list, nofV));
+        addEdge(list, 3, 4);
+        addEdge(list, 2, 4);
+
     }
 
 
