@@ -1,13 +1,11 @@
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
         int nofV = 5;
+        int source = 0;
         for (int i = 0; i < nofV; i++)
             list.add(new ArrayList<Integer>());
         addEdge(list, 0, 1);
@@ -15,10 +13,35 @@ public class Main {
         addEdge(list, 2, 3);
         addEdge(list, 3, 4);
         addEdge(list, 2, 4);
+        shortestPath(topologicalSort(list, nofV), source);
 
     }
 
+    private static void shortestPath(List<Integer> topologicalSort, int source) {
+        int[] distance = new int[topologicalSort.size()];
 
+    }
+
+    private static List<Integer> topologicalSort(ArrayList<ArrayList<Integer>> list, int nofV) {
+        boolean[] visited = new boolean[nofV];
+        Stack<Integer> s = new Stack<Integer>();
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < nofV; i++)
+            if (!visited[i])
+                topologicalSort(list, visited, s, i);
+        while (!s.isEmpty())
+            result.add(s.pop());
+        return result;
+    }
+
+    private static void topologicalSort(ArrayList<ArrayList<Integer>> list, boolean[] visited, Stack<Integer> s, int source) {
+        visited[source] = true;
+        for (int neighbour : list.get(source)) {
+            if (!visited[neighbour])
+                topologicalSort(list, visited, s, neighbour);
+        }
+        s.push(source);
+    }
 
 
     private static void printGraph(ArrayList<ArrayList<Integer>> list, int v) {
