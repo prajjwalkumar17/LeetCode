@@ -14,7 +14,6 @@ public class DFS {
         addEdge(list, 1, 2);
         addEdge(list, 3, 4);
         DFS(list, nofV);
-
     }
     private static void printGraph(ArrayList<ArrayList<Integer>> list, int v) {
         for (int i = 0; i < list.size(); i++) {

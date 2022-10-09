@@ -3,7 +3,6 @@ package Graph;
 import java.util.*;
 
 public class SelfMadeGraph {
-    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         Graph g = new Graph();
         g.addEdge(0, 1, 2);
@@ -59,7 +58,6 @@ public class SelfMadeGraph {
             mp.get(u).add(new Node(u, v, w));
             return true;
         }
-
         @Override
         public String toString() {
             StringBuilder data = new StringBuilder();

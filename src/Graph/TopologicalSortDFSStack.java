@@ -7,10 +7,9 @@ public class TopologicalSortDFSStack {
     public static void topologicalSort(ArrayList<ArrayList<Integer>> list, int nofV) {
         Stack<Integer> stack = new Stack<>();
         boolean[] visited = new boolean[nofV];
-        for (int i = 0; i < nofV; i++) {
+        for (int i = 0; i < nofV; i++)
             if (!visited[i])
                 DFS(list, visited, stack, i);
-        }
         while (!stack.isEmpty())
             System.out.println(stack.pop());
     }
