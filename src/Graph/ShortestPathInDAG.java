@@ -24,15 +24,15 @@ public class ShortestPathInDAG {
     }
 
     public static void topologicalSort(Map<Integer, List<Node>> mp) {
-        for (int key : mp.keySet())
-            System.out.println(key);
+        int[] visited = new int[mp.size()];
+        for (int i = 0)
+
     }
 
     static class Node {
         int vertex;
         int weight;
         int edgeTo;
-
         public Node(int vertex, int edgeTo, int weight) {
             this.vertex = vertex;
             this.weight = weight;
@@ -51,14 +51,11 @@ public class ShortestPathInDAG {
             return edgeTo;
         }
     }
-
     static class Graph {
         Map<Integer, List<Node>> mp = null;
-
         public Graph() {
             mp = new LinkedHashMap<>();
         }
-
         public void addEdge(int source, int dest, int weight) {
             if (!mp.containsKey(source))
                 mp.put(source, new LinkedList<>());
@@ -66,7 +63,6 @@ public class ShortestPathInDAG {
                 mp.put(dest, new LinkedList<>());
             mp.get(source).add(new Node(source, dest, weight));
         }
-
         public Map<Integer, List<Node>> getMp() {
             return mp;
         }
