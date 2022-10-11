@@ -15,60 +15,47 @@ public class SelfMadeGraph {
         System.out.println(g);
     }
 
+
     static class Node {
         int vertex;
-        int edgeTo;
         int weight;
-
+        int edgeTo;
         public Node(int vertex, int edgeTo, int weight) {
             this.vertex = vertex;
-            this.edgeTo = edgeTo;
             this.weight = weight;
+            this.edgeTo = edgeTo;
         }
 
         public int getVertex() {
             return vertex;
         }
 
-        public int getEdgeTo() {
-            return edgeTo;
-        }
-
         public int getWeight() {
             return weight;
         }
 
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "vertex=" + vertex +
-                    ", edgeTo=" + edgeTo +
-                    ", weight=" + weight +
-                    '}';
+        public int getEdgeTo() {
+            return edgeTo;
         }
     }
+
     static class Graph {
         Map<Integer, List<Node>> mp = null;
+
         public Graph() {
             mp = new LinkedHashMap<>();
         }
-        public boolean addEdge(int u, int v, int w) {
-            if (!mp.containsKey(u))
-                mp.put(u, new LinkedList<>());
-            mp.get(u).add(new Node(u, v, w));
-            return true;
-        }
-        @Override
-        public String toString() {
-            StringBuilder data = new StringBuilder();
-            for (int key : mp.keySet()) {
-                for (Node value : mp.get(key))
-                    data.append(value.getEdgeTo()).append(" ");
-                data.append("\n");
 
-            }
-            return data.toString();
+        public void addEdge(int source, int dest, int weight) {
+            if (!mp.containsKey(source))
+                mp.put(source, new LinkedList<>());
+            else if (!mp.containsKey(dest))
+                mp.put(dest, new LinkedList<>());
+            mp.get(source).add(new Node(source, dest, weight));
+        }
+
+        public Map<Integer, List<Node>> getMp() {
+            return mp;
         }
     }
-
 }
