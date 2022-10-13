@@ -21,8 +21,8 @@ public class ShortestPathInDAG {
     }
 
     public static void topologicalSort(Map<Integer, List<Node>> mp) {
-        boolean[] visited = new boolean[1000];
-        int[] distance = new int[1000];
+        boolean[] visited = new boolean[100];
+        int[] distance = new int[100];
         Arrays.fill(distance, Integer.MAX_VALUE);
         distance[0] = 0;
         Stack<Integer> stack = new Stack<>();

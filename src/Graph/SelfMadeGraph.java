@@ -15,29 +15,33 @@ public class SelfMadeGraph {
         System.out.println(g);
     }
 
+     static class Node implements Comparable<Node> {
+         int vertex;
+         int weight;
+         int edgeTo;
 
-    static class Node {
-        int vertex;
-        int weight;
-        int edgeTo;
-        public Node(int vertex, int edgeTo, int weight) {
-            this.vertex = vertex;
-            this.weight = weight;
-            this.edgeTo = edgeTo;
-        }
+         public Node(int vertex, int edgeTo, int weight) {
+             this.vertex = vertex;
+             this.weight = weight;
+             this.edgeTo = edgeTo;
+         }
 
-        public int getVertex() {
-            return vertex;
-        }
+         public int getVertex() {
+             return vertex;
+         }
 
-        public int getWeight() {
-            return weight;
-        }
+         public int getWeight() {
+             return weight;
+         }
 
-        public int getEdgeTo() {
-            return edgeTo;
-        }
-    }
+         public int getEdgeTo() {
+             return edgeTo;
+         }
+
+         public int compareTo(Node o) {
+             return this.weight - o.weight;
+         }
+     }
 
     static class Graph {
         Map<Integer, List<Node>> mp = null;
