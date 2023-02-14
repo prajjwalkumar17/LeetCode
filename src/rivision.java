@@ -5,8 +5,27 @@ public class rivision {
         //TODO second largest element in an array
 
         int[] arr = new int[]{22, 0, 24, 0, 88, 1};
-        System.out.println(Arrays.toString(LeftRotateAnArrayByOneAntiClockWise(arr)));
+        System.out.println(Arrays.toString(RotateByDPos(arr, 2)));
 
+    }
+
+    public static int[] RotateByDPos(int[] arr, int d) {
+        int[] temp = new int[d];
+        System.arraycopy(arr, 0, temp, 0, d);
+        for (int i = d; i < arr.length; i++) {
+            arr[i - d] = arr[i];
+        }
+        System.arraycopy(temp, 0, arr, arr.length - d, d);
+        return arr;
+    }
+
+    public static int[] LeftRotateAnArrayByOneClockWise(int[] arr) {
+        int last = arr[arr.length - 1];
+        for (int i = arr.length - 2; i >= 0; i--) {
+            arr[i + 1] = arr[i];
+        }
+        arr[0] = last;
+        return arr;
     }
 
     public static int[] LeftRotateAnArrayByOneAntiClockWise(int[] arr) {
