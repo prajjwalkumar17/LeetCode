@@ -1,11 +1,26 @@
+import java.util.Arrays;
+
 public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
 
-        int[] arr = new int[]{22, 24, 56, 88, 1};
-        System.out.println(String.valueOf(IsSorted(arr)));
+        int[] arr = new int[]{22, 24, 88, 1};
+        System.out.println(Arrays.toString(ReverseAnArray(arr)));
 
 
+    }
+
+    public static int[] ReverseAnArray(int[] arr) {
+        int low = 0;
+        int high = arr.length - 1;
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[low];
+            arr[low] = arr[high];
+            arr[high] = temp;
+            low++;
+            high--;
+        }
+        return arr;
     }
 
     public static int LargestNo(int[] arr) {
