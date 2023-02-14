@@ -4,10 +4,45 @@ public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
 
-        int[] arr = new int[]{22, 24, 88, 1};
-        System.out.println(Arrays.toString(ReverseAnArray(arr)));
+        int[] arr = new int[]{22, 0, 24, 0, 88, 1};
+        System.out.println(Arrays.toString(LeftRotateAnArrayByOneAntiClockWise(arr)));
 
+    }
 
+    public static int[] LeftRotateAnArrayByOneAntiClockWise(int[] arr) {
+        int first = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            arr[i - 1] = arr[i];
+        }
+        arr[arr.length - 1] = first;
+        return arr;
+    }
+
+    public static int[] MoveZerosToEnd(int[] arr) {
+        int res = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                swap(i, res, arr);
+                res++;
+            }
+        }
+        return arr;
+    }
+
+    private static void swap(int i, int i1, int[] arr) {
+        int temp = arr[i];
+        arr[i] = arr[i1];
+        arr[i1] = temp;
+    }
+
+    public static int RemoveDups(int[] arr) {
+        int res = 1;
+        for (int i = 1; i < arr.length; i++)
+            if (arr[i] != arr[res - 1]) {
+                arr[res] = arr[i];
+                res++;
+            }
+        return res;
     }
 
     public static int[] ReverseAnArray(int[] arr) {
