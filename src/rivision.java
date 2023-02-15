@@ -4,12 +4,40 @@ public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
 
-        int[] arr = new int[]{22, 0, 24, 0, 88, 1};
-        System.out.println(Arrays.toString(RotateByDPos(arr, 2)));
-
+        int[] arr = new int[]{22, 0, 24, 90, 88, 88, 1};
+//        System.out.println(Arrays.toString(RotateByDPosEff(arr, 2)));
+        PrintLeadersArray(arr);
     }
 
-    public static int[] RotateByDPos(int[] arr, int d) {
+    private static void PrintLeadersArray(int[] arr) {
+        int maxIndex = arr.length - 1;
+        System.out.println(arr[maxIndex]);
+        for (int i = arr.length - 2; i >= 0; i--) {
+            if (arr[i] > arr[maxIndex]) {
+                maxIndex = i;
+                System.out.println(arr[i]);
+            }
+        }
+    }
+
+    public static int[] RotateByDPosEff(int[] arr, int d) {
+        ReverseArray(arr, 0, d - 1);
+        ReverseArray(arr, d, arr.length - 1);
+        ReverseArray(arr, 0, arr.length - 1);
+        return arr;
+    }
+
+    private static void ReverseArray(int[] arr, int low, int high) {
+        while (low < high) {
+            int temp = arr[low];
+            arr[low] = arr[high];
+            arr[high] = temp;
+            low++;
+            high--;
+        }
+    }
+
+    public static int[] RotateByDPosNaive(int[] arr, int d) {
         int[] temp = new int[d];
         System.arraycopy(arr, 0, temp, 0, d);
         for (int i = d; i < arr.length; i++) {
