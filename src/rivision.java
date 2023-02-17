@@ -1,12 +1,26 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
 
+        List<Integer> list = new ArrayList<>();
         int[] arr = new int[]{22, 0, 24, 90, 88, 88, 1};
 //        System.out.println(Arrays.toString(RotateByDPosEff(arr, 2)));
-        PrintLeadersArray(arr);
+        MaxDifference(arr);
+    }
+
+    private static void MaxDifference(int[] arr) {
+        int min = arr[0];
+        int maxOutput = Integer.MIN_VALUE;
+        for (int i = 1; i < arr.length; i++) {
+            int diff = arr[i] - min;
+            maxOutput = Math.max(diff, maxOutput);
+            min = Math.min(min, arr[i]);
+        }
+        System.out.println(maxOutput);
     }
 
     private static void PrintLeadersArray(int[] arr) {
