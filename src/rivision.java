@@ -5,11 +5,63 @@ import java.util.List;
 public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
-
-        List<Integer> list = new ArrayList<>();
-        int[] arr = new int[]{22, 0, 24, 90, 88, 88, 1};
+        int[] arr = new int[]{1, 5, 3, 8, 12};
 //        System.out.println(Arrays.toString(RotateByDPosEff(arr, 2)));
-        MaxDifference(arr);
+        TrapRainwaterEFF(arr);
+    }
+
+    private static void TrapRainwaterEFF(int[] arr) {
+        int lmaxArr[] = new int[arr.length];
+        lmaxArr[0] = arr[0];
+        int rmaxArr[] = new int[arr.length];
+        rmaxArr[arr.length - 1] = arr[arr.length - 1];
+        int res = 0;
+        for (int i = 1; i < arr.length - 1; i++)
+            lmaxArr[i] = Math.max(arr[i], lmaxArr[i - 1]);
+        for (int i = arr.length - 2; i >= 0; i--)
+            rmaxArr[i] = Math.max(rmaxArr[i + 1], arr[i]);
+        for (int i = 1; i < arr.length - 1; i++)
+            res += Math.min(rmaxArr[i], lmaxArr[i]) - arr[i];
+        System.out.println(res);
+    }
+
+    private static void TrapRainwaterNAiVE(int[] arr) {
+        int res = 0;
+        for (int i = 1; i < arr.length - 2; i++) {
+            int lmax = arr[i];
+            for (int j = 0; j < i; j++)
+                lmax = Math.max(lmax, arr[j]);
+            int rmax = arr[i];
+            for (int k = i; k < arr.length; k++)
+                rmax = Math.max(rmax, arr[k]);
+            res += Math.min(lmax, rmax) - arr[i];
+        }
+        System.out.println(res);
+    }
+
+    private static void StockBuyAndSell(int[] arr) {
+        int profit = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > arr[i - 1])
+                profit += arr[i] - arr[i - 1];
+        }
+        System.out.println(profit);
+    }
+
+    private static void Frequency(int[] arr) {
+        int f = 1;
+        int i = 1;
+        while (i < arr.length) {
+            while (i < arr.length && arr[i] == arr[i - 1]) {
+                f++;
+                i++;
+            }
+            System.out.println(arr[i - 1] + " " + f);
+            i++;
+            f = 1;
+        }
+        if (arr.length == 1 || arr[arr.length - 1] != arr[arr.length - 2])
+            System.out.println(arr[arr.length - 1] + " " + 1);
     }
 
     private static void MaxDifference(int[] arr) {
