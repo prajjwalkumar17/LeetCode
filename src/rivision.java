@@ -5,9 +5,22 @@ import java.util.List;
 public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
-        int[] arr = new int[]{1, 5, 3, 8, 12};
+        int[] arr = new int[]{1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1};
 //        System.out.println(Arrays.toString(RotateByDPosEff(arr, 2)));
-        TrapRainwaterEFF(arr);
+        MaximumOnes(arr);
+    }
+
+    private static void MaximumOnes(int[] arr) {
+        int res = 0, curr = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0)
+                curr = 0;
+            else {
+                curr += 1;
+                res = Math.max(res, curr);
+            }
+        }
+        System.out.println(res);
     }
 
     private static void TrapRainwaterEFF(int[] arr) {
