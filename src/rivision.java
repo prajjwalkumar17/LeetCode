@@ -5,9 +5,33 @@ import java.util.List;
 public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
-        int[] arr = new int[]{1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1};
+        int[] arr = new int[]{1, 2, 3, 4, 5, 1, 2, 3, 4, 4, 6, 7};
 //        System.out.println(Arrays.toString(RotateByDPosEff(arr, 2)));
-        MaximumOnes(arr);
+        MaximumEvenOddSubarray(arr);
+    }
+
+    private static void MaximumEvenOddSubarray(int[] arr) {
+        int res = 0;
+        int curr = 1;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] % 2 != arr[i - 1] % 2) {
+                curr += 1;
+                res = Math.max(curr, res);
+            } else
+                curr = 1;
+
+        }
+        System.out.println(res);
+    }
+
+    private static void MaximumSubArraySum(int[] arr) {
+        int maxEnd = arr[0];
+        int res = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            maxEnd = Math.max(arr[i], maxEnd + arr[i]);
+            res = Math.max(res, maxEnd);
+        }
+        System.out.println(res);
     }
 
     private static void MaximumOnes(int[] arr) {
