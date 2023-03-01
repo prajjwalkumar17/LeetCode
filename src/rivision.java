@@ -5,8 +5,20 @@ import java.util.List;
 public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
-        int[] arr = new int[]{4, 4, 6, 6, 6};
-        System.out.println(String.valueOf(MajorityElement(arr)));
+        int[] arr = new int[]{1, 8, 30, -5, 20, 7};
+        System.out.println(String.valueOf(MaxSumOfKElements(arr, 4)));
+    }
+
+    private static int MaxSumOfKElements(int[] arr, int k) {
+        int prevSum = 0;
+        for (int i = 0; i < k; i++)
+            prevSum += arr[i];
+        int res = prevSum;
+        for (int i = k; i < arr.length; i++) {
+            prevSum = prevSum + arr[i] - arr[i - k];
+            res = Math.max(res, prevSum);
+        }
+        return res;
     }
 
     private static int MajorityElement(int arr[]) {
