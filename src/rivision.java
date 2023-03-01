@@ -5,9 +5,51 @@ import java.util.List;
 public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
-        int[] arr = new int[]{1, 2, 3, 4, 5, 1, 2, 3, 4, 4, 6, 7};
-//        System.out.println(Arrays.toString(RotateByDPosEff(arr, 2)));
-        MaximumEvenOddSubarray(arr);
+        int[] arr = new int[]{4, 4, 6, 6, 6};
+        System.out.println(String.valueOf(MajorityElement(arr)));
+    }
+
+    private static int MajorityElement(int arr[]) {
+        int curr = 0;
+        int count = 1;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == arr[curr])
+                count++;
+            else
+                count--;
+            if (count == 0) {
+                curr = i;
+                count = 1;
+            }
+        }
+        int freqOfMostOccuredElem = 0;
+        for (int i : arr) {
+            if (i == arr[curr])
+                freqOfMostOccuredElem += 1;
+        }
+        return freqOfMostOccuredElem > arr.length / 2 ? curr : -1;
+    }
+
+    private static int CircularSubarraySum(int[] arr) {
+        int normalMaximumSubArraySum = NormalMaxSubArray(arr);
+        int arrSum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            arrSum += arr[i];
+            arr[i] = -arr[i];
+        }
+        int inVertedMaximumSubArraySum = arrSum + NormalMaxSubArray(arr);
+        return Math.max(inVertedMaximumSubArraySum, normalMaximumSubArraySum);
+
+    }
+
+    private static int NormalMaxSubArray(int[] arr) {
+        int res = arr[0];
+        int maxEnding = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            maxEnding = Math.max(arr[i], maxEnding + arr[i]);
+            res = Math.max(res, maxEnding);
+        }
+        return res;
     }
 
     private static void MaximumEvenOddSubarray(int[] arr) {

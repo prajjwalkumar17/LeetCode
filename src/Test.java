@@ -1,23 +1,27 @@
 import java.io.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Test {
-    //constants
-//     static int a=2;
-
-    int c = 10;
-
-    public static void main(String[] args) throws IOException {
-        int p = 5;
-        int y = 10;
-        int z = 15;
-        int x = 20;
-        int e = res(p, y, z, x);
-        System.out.println(e);
+    //    {1,2,3,5}
+    public static void main(String[] args) {
+        String str = "prajjjwal";
     }
 
-    public static int res(int a, int b, int c, int d) {
-        int e = (a + b) / (c * d);
-        return e;
+    private static char MaxOcuuringElem(String str) {
+        Map<Character, Integer> resMap = new HashMap<>();
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (resMap.containsKey(ch))
+                resMap.put(ch, resMap.get(ch) + 1);
+            else
+                resMap.put(ch, 1);
+        }
+/*        char res;
+        Iterator<Map.Entry<Character,Integer>> itr=resMap.entrySet().iterator();
+        while()*/
+        return 'a';
     }
 }
 
