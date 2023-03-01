@@ -5,8 +5,32 @@ import java.util.List;
 public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
-        int[] arr = new int[]{1, 8, 30, -5, 20, 7};
-        System.out.println(String.valueOf(MaxSumOfKElements(arr, 4)));
+        int[] arr = new int[]{1, 8, 30, 5, 20, 7};
+        System.out.println(String.valueOf(SubArrayWithGivenSum(arr, 27)));
+    }
+
+    /*    private static String MinimumFlips(int arr[]){
+            int first=arr[0];
+            StringBuilder res= new StringBuilder();
+            for(int i=1;i<arr.length;i++){
+                if(arr[i]!=first){
+                    res.append(i).append(" to");
+                }
+            }
+        } */
+    private static boolean SubArrayWithGivenSum(int[] arr, int k) {
+        int currSum = 0;
+        int start = 0;
+        for (int i = 0; i < arr.length; i++) {
+            currSum += arr[i];
+            while (currSum > k) {
+                currSum -= arr[start];
+                start++;
+            }
+            if (k == currSum)
+                return true;
+        }
+        return false;
     }
 
     private static int MaxSumOfKElements(int[] arr, int k) {
