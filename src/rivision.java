@@ -6,7 +6,16 @@ public class rivision {
     public static void main(String[] args) {
         //TODO second largest element in an array
         int[] arr = new int[]{1, 8, 30, 5, 20, 7};
-        System.out.println(String.valueOf(SubArrayWithGivenSum(arr, 27)));
+        System.out.println(getPrefixedSum(arr, 4, 3));
+    }
+
+    public static int getPrefixedSum(int[] arr, int start, int end) {
+        int prefixSum[] = new int[arr.length];
+        prefixSum[0] = arr[0];
+        for (int i = 1; i < arr.length; i++)
+            prefixSum[i] = prefixSum[i - 1] + arr[i];
+        if (start == 0) return prefixSum[end];
+        else return prefixSum[end] - prefixSum[start - 1];
     }
 
     /*    private static String MinimumFlips(int arr[]){
