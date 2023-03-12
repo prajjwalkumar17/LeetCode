@@ -5,13 +5,13 @@ public class Juspay {
             int val;
             boolean isLocked;
             int lockedBy;
-            List<Node> children;
+            List<Node> childrens;
 
             public Node(int val) {
                 this.val = val;
                 isLocked = false;
                 lockedBy = -1;
-                children = new ArrayList<>();
+                childrens = new ArrayList<>();
             }
         }
 
@@ -29,7 +29,7 @@ public class Juspay {
             private void createTree(Node parent, int val, int m) {
                 for (int i = 0; i < m; i++) {
                     Node child = new Node(val++);
-                    parent.children.add(child);
+                    parent.childrens.add(child);
                     nodesById.put(child.val, child);
                     createTree(child, val, m);
                 }
@@ -40,7 +40,7 @@ public class Juspay {
                 if (node == null) {
                     return false;
                 }
-                if (node.isLocked || hasLockedAncestor(node) || hasLockedDescendant(node)) {
+                if (node.isLocked || checkLockedAncestor(node) || hasLockedDescendant(node)) {
                     return false;
                 }
                 node.isLocked = true;
@@ -60,7 +60,7 @@ public class Juspay {
 
             public boolean upgrade(int val, int id) {
                 Node node = nodesById.get(val);
-                if (node == null || node.isLocked || hasLockedAncestor(node) || !hasLockedDescendant(node) || !areAllDescendantsLockedBy(node, id)) {
+                if (node == null || node.isLocked || checkLockedAncestor(node) || !hasLockedDescendant(node) || !areAllDescendantsLockedBy(node, id)) {
                     return false;
                 }
                 unlockDescendants(node);
@@ -69,7 +69,7 @@ public class Juspay {
                 return true;
             }
 
-            private boolean hasLockedAncestor(Node node) {
+            private boolean checkLockedAncestor(Node node) {
                 while (node != null) {
                     if (node.isLocked) {
                         return true;
@@ -83,7 +83,7 @@ public class Juspay {
                 if (node.isLocked) {
                     return true;
                 }
-                for (Node child : node.children) {
+                for (Node child : node.childrens) {
                     if (hasLockedDescendant(child)) {
                         return true;
                     }
@@ -95,7 +95,7 @@ public class Juspay {
                 if (node.isLocked && node.lockedBy != id) {
                     return false;
                 }
-                for (Node child : node.children) {
+                for (Node child : node.childrens) {
                     if (!areAllDescendantsLockedBy(child, id)) {
                         return false;
                     }
@@ -106,30 +106,30 @@ public class Juspay {
             private void unlockDescendants(Node node) {
                 node.isLocked = false;
                 node.lockedBy = -1;
-                for (Node child : node.children) {
+                for (Node child : node.childrens) {
                     unlockDescendants(child);
                 }
             }
         }
     static class Node {
             int val;
-            boolean locked;
+            boolean isLocked;
             int lockedBy;
             Node parent;
-            List<Node> children;
+            List<Node> childrens;
 
             Node(int val) {
                 this.val = val;
-                locked = false;
+                isLocked = false;
                 lockedBy = -1;
                 parent = null;
-                children = new ArrayList<>();
+                childrens = new ArrayList<>();
             }
 
-            boolean hasLockedAncestor() {
+            boolean checkLockedAncestor() {
                 Node node = parent;
                 while (node != null) {
-                    if (node.locked) {
+                    if (node.isLocked) {
                         return true;
                     }
                     node = node.parent;
@@ -151,7 +151,7 @@ public class Juspay {
                     if (i != 1) {
                         Node parent = nodesById.get((i - 2) / m + 1);
                         node.parent = parent;
-                        parent.children.add(node);
+                        parent.childrens.add(node);
                     } else {
                         root = node;
                     }
@@ -160,10 +160,10 @@ public class Juspay {
 
             boolean lock(int v, int id) {
                 Node node = nodesById.get(v);
-                if (node.locked || node.hasLockedAncestor()) {
+                if (node.isLocked || node.checkLockedAncestor()) {
                     return false;
                 } else {
-                    node.locked = true;
+                    node.isLocked = true;
                     node.lockedBy = id;
                     return true;
                 }
@@ -171,10 +171,10 @@ public class Juspay {
 
             boolean unlock(int v, int id) {
                 Node node = nodesById.get(v);
-                if (!node.locked || node.lockedBy != id) {
+                if (!node.isLocked || node.lockedBy != id) {
                     return false;
                 } else {
-                    node.locked = false;
+                    node.isLocked = false;
                     node.lockedBy = -1;
                     return true;
                 }
@@ -182,20 +182,20 @@ public class Juspay {
 
             boolean upgrade(int v, int id) {
                 Node node = nodesById.get(v);
-                if (node.locked || node.hasLockedAncestor()) {
+                if (node.isLocked || node.checkLockedAncestor()) {
                     return false;
                 }
                 boolean canUpgrade = true;
-                for (Node child : node.children) {
-                    canUpgrade &= child.locked && child.lockedBy == id;
+                for (Node child : node.childrens) {
+                    canUpgrade &= child.isLocked && child.lockedBy == id;
                 }
                 if (!canUpgrade) {
                     return false;
                 }
-                for (Node child : node.children) {
+                for (Node child : node.childrens) {
                     unlock(child.val, id);
                 }
-                node.locked = true;
+                node.isLocked = true;
                 node.lockedBy = id;
                 return true;
             }
